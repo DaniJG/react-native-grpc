@@ -1,0 +1,68 @@
+PODS:
+  - '!ProtoCompiler (3.2.0)':
+    - Protobuf (~> 3.0)
+  - '!ProtoCompiler-gRPCPlugin (1.4.2)':
+    - '!ProtoCompiler (= 3.2.0)'
+    - gRPC-ProtoRPC (= 1.4.2)
+  - BoringSSL (8.2):
+    - BoringSSL/Implementation (= 8.2)
+    - BoringSSL/Interface (= 8.2)
+  - BoringSSL/Implementation (8.2):
+    - BoringSSL/Interface (= 8.2)
+  - BoringSSL/Interface (8.2)
+  - gRPC (1.4.2):
+    - gRPC-Core (= 1.4.2)
+    - gRPC-RxLibrary (= 1.4.2)
+  - gRPC-Core (1.4.2):
+    - gRPC-Core/Implementation (= 1.4.2)
+    - gRPC-Core/Interface (= 1.4.2)
+  - gRPC-Core/Implementation (1.4.2):
+    - BoringSSL (~> 8.0)
+    - gRPC-Core/Interface (= 1.4.2)
+    - nanopb (~> 0.3)
+  - gRPC-Core/Interface (1.4.2)
+  - gRPC-ProtoRPC (1.4.2):
+    - gRPC (= 1.4.2)
+    - gRPC-RxLibrary (= 1.4.2)
+    - Protobuf (~> 3.0)
+  - gRPC-RxLibrary (1.4.2)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
+  - Protobuf (3.3.0)
+  - ReactNativeGrpc (0.0.1):
+    - '!ProtoCompiler-gRPCPlugin (~> 1.0)'
+    - ReactNativeGrpc/Messages (= 0.0.1)
+    - ReactNativeGrpc/Services (= 0.0.1)
+  - ReactNativeGrpc/Messages (0.0.1):
+    - '!ProtoCompiler-gRPCPlugin (~> 1.0)'
+    - Protobuf
+  - ReactNativeGrpc/Services (0.0.1):
+    - '!ProtoCompiler-gRPCPlugin (~> 1.0)'
+    - gRPC-ProtoRPC
+    - ReactNativeGrpc/Messages
+
+DEPENDENCIES:
+  - ReactNativeGrpc (from `.`)
+
+EXTERNAL SOURCES:
+  ReactNativeGrpc:
+    :path: .
+
+SPEC CHECKSUMS:
+  '!ProtoCompiler': b66c7c0c1d911ad1490dcbfce30e1508739d8309
+  '!ProtoCompiler-gRPCPlugin': 892d2bfa38a797c026ead6c8aba6df99081407c9
+  BoringSSL: 4135ae556ee2b82ee85477c39ba917a3dd5424ba
+  gRPC: 74b57d3c8a9366e09493828e0a1d27f6d69a79fd
+  gRPC-Core: 642d29e59e5490374622b0629c2dd1c4c111775c
+  gRPC-ProtoRPC: 675ef3d484c06967ed2a5f5ee0e510a3756f755e
+  gRPC-RxLibrary: 7a25c5c25282669a82d1783d7e8a036f53e8ef27
+  nanopb: 22bc080fa3955e2116b6ff3ee6c2cb3c15ab97cb
+  Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
+  ReactNativeGrpc: af28cefeaec000456b2532e948f8df8d0be9ab38
+
+PODFILE CHECKSUM: fde1da26655e093502a8b73e4c36ed2d3f527de3
+
+COCOAPODS: 1.2.1

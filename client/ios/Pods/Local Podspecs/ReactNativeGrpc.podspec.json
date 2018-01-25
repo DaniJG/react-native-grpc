@@ -1,0 +1,60 @@
+{
+  "name": "ReactNativeGrpc",
+  "version": "0.0.1",
+  "license": "Apache License, Version 2.0",
+  "authors": {
+    "gRPC contributors": "grpc-io@googlegroups.com"
+  },
+  "homepage": "https://grpc.io/",
+  "summary": "Example integration between react-native and GRPC",
+  "source": {
+    "git": "https://github.com/grpc/grpc.git"
+  },
+  "platforms": {
+    "ios": "7.1",
+    "osx": "10.9"
+  },
+  "dependencies": {
+    "!ProtoCompiler-gRPCPlugin": [
+      "~> 1.0"
+    ]
+  },
+  "prepare_command": "mkdir -p Pods/ReactNativeGrpc\nPods/!ProtoCompiler/protoc         --plugin=protoc-gen-grpc=Pods/!ProtoCompiler-gRPCPlugin/grpc_objective_c_plugin         --objc_out=Pods/ReactNativeGrpc         --grpc_out=Pods/ReactNativeGrpc         -I ../../proto         -I Pods/!ProtoCompiler         ../../proto/helloworld.proto",
+  "pod_target_xcconfig": {
+    "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1",
+    "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES": "YES"
+  },
+  "subspecs": [
+    {
+      "name": "Messages",
+      "source_files": [
+        "Pods/ReactNativeGrpc/*.pbobjc.{h,m}",
+        "Pods/ReactNativeGrpc/**/*.pbobjc.{h,m}"
+      ],
+      "header_mappings_dir": "Pods/ReactNativeGrpc",
+      "requires_arc": false,
+      "dependencies": {
+        "Protobuf": [
+
+        ]
+      }
+    },
+    {
+      "name": "Services",
+      "source_files": [
+        "Pods/ReactNativeGrpc/*.pbrpc.{h,m}",
+        "Pods/ReactNativeGrpc/**/*.pbrpc.{h,m}"
+      ],
+      "header_mappings_dir": "Pods/ReactNativeGrpc",
+      "requires_arc": true,
+      "dependencies": {
+        "gRPC-ProtoRPC": [
+
+        ],
+        "ReactNativeGrpc/Messages": [
+
+        ]
+      }
+    }
+  ]
+}
